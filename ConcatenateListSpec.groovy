@@ -80,7 +80,17 @@ class ConcatenateListSpec extends Specification{
       result == [[]]
   }
 
-  void "seventh case of data"(){
+  void "eighth case of data"(){
+    given:
+       List data = [[[n:1], [n:2]],
+                   [[n:1]]]
+    when:
+      def result = cl.add(data)
+    then:
+      result == [[n:1]]
+  }
+
+  void "nineth case of data"(){
     given:
       List data = [[[n:1], [n:2], [n:3]],
                    [[n:1], [n:2]],
